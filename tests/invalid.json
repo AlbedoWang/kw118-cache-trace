@@ -1,0 +1,25 @@
+[
+  {
+    "addresses": [
+      0,
+      1,
+      4,
+      0,
+      8,
+      4
+    ],
+    "sets": 3,
+    "ways": 2,
+    "block_size": 4,
+    "policy": "lru"
+  },
+  {
+    "addresses": [
+      -1
+    ],
+    "sets": 1,
+    "ways": 2,
+    "block_size": 4,
+    "policy": "lru"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "addresses": [
+      0,
+      1,
+      4,
+      0,
+      8,
+      4
+    ],
+    "sets": 1,
+    "ways": 2,
+    "block_size": 4,
+    "policy": "lru"
+  },
+  {
+    "addresses": [
+      0,
+      1,
+      4,
+      0,
+      8,
+      4
+    ],
+    "sets": 1,
+    "ways": 2,
+    "block_size": 4,
+    "policy": "fifo"
+  },
+  {
+    "addresses": [],
+    "sets": 2,
+    "ways": 1,
+    "block_size": 8,
+    "policy": "fifo"
+  },
+  {
+    "addresses": [
+      0,
+      8,
+      16,
+      0,
+      4
+    ],
+    "sets": 2,
+    "ways": 1,
+    "block_size": 4,
+    "policy": "lru"
+  }
+]

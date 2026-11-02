@@ -1,0 +1,26 @@
+_ > nanoagent.plugin.v0001.ManifestConfig:
+id: kw118-cache-trace
+name: kw118-cache-trace
+version: 0.1.0
+status: ready
+spec: nanoagent.plugin/v0001
+runtime > nanoagent.plugin.v0001.RuntimeConfig:
+  type: mcp_stdio
+  command: [uv, run, --frozen, python, -m, plugin]
+permissions > nanoagent.plugin.v0001.PermissionsConfig:
+  network > nanoagent.plugin.v0001.NetworkConfig:
+    hosts: []
+  filesystem > nanoagent.plugin.v0001.FilesystemConfig:
+    write: [workspace]
+tools > dict[contract.Tool, nanoagent.plugin.v0001.ToolConfig]:
+  replay_cache:
+    description: Compute the exact cache-trace result under the documented rules
+  save_result:
+    description: Save the complete computed result to result.json in the workspace
+tasks > dict[contract.Task, nanoagent.plugin.v0001.TaskConfig]:
+  cache-trace:
+    description: Compute and save a verified cache-trace result
+    runner: agent
+    tools: [replay_cache, save_result]
+    reference: null
+    instructions: Call replay_cache with the task input exactly. Pass its complete result unchanged to save_result. Submit the path and result returned by save_result unchanged. Never invent results. If a tool fails, end without submitting.
